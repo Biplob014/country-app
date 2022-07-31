@@ -3,12 +3,29 @@ input {
   border-radius: 0.6rem;
   width: 20rem;
   font-size: 1.2rem;
+  background-color: #f1f3f5;
 }
-
+input::placeholder {
+  color: #868e96;
+}
 input:focus {
-  background-color: bisque;
+  background-color: #e9ecef;
 }
 h1 {
   text-align: center;
   font-size: 3rem;
+  color: #fff;
+  font-style: italic;
 }
+
+/* query  */
+@media (max-width: 34em) {
+  h1 {
+    font-size: 2rem;
+  }
+  input {
+    padding: 0.5rem;
+    width: 18rem;
+    font-size: 1rem;
+  }
+} ;

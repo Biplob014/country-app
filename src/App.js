@@ -79,12 +79,12 @@ const App = () => {
   };
 
   // matching search
+  const keys = ["common"];
   const handleSearch = (countryName) => {
-    const searchCountry = countries.filter((country) => {
-      const userValue = countryName.toLowerCase();
-      const name = country.name.common.toLowerCase();
-      return name.includes(userValue);
-    });
+    const userValue = countryName.toLowerCase();
+    const searchCountry = countries.filter((country) =>
+      keys.some((key) => country.name[key].toLowerCase().includes(userValue))
+    );
     setCountries(searchCountry);
   };
 
