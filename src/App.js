@@ -6,48 +6,7 @@ import Serach from "./Components/Serach";
 
 const url = "https://restcountries.com/v3.1/all";
 const App = () => {
-  // const [isLoading, setisLoading] = useState(true);
-  // const [error, setError] = useState(null);
-  // const [countries, setCountries] = useState([]);
-  // const [filteredCountries, setfilteredCountries] = useState(countries);
-  // // fetching data
-  // const fetchData = async (url) => {
-  //   setisLoading(true);
-  //   try {
-  //     const response = await fetch(url);
-  //     const data = await response.json();
-  //     setCountries(data);
-  //     setfilteredCountries(data);
-  //     setisLoading(false);
-  //     setError(null);
-  //   } catch (error) {
-  //     setisLoading(false);
-  //     setError(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   fetchData(url);
-  // }, []);
-  // // remove country
-  // const handleRemoveCountry = (name) => {
-  //   const filter = filteredCountries.filter(
-  //     (country) => country.name.common !== name
-  //   );
-  //   setfilteredCountries(filter);
-  // };
-  // // handle search
-  // const handleSearch = (searchvalue) => {
-  //   let value = searchvalue.toLowerCase();
-  //   const neewCountries = countries.filter((country) => {
-  //     const countryName = country.name.common.toLowerCase();
-  //     return countryName.startsWith(value);
-  //   });
-  //   setfilteredCountries(neewCountries);
-  // };
-
-  // practice
   const [countries, setCountries] = useState([]);
-  // const [copyCountries, setcopyCountries] = useState(countries);
   const [isLoading, setisLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -60,7 +19,6 @@ const App = () => {
     makeRequest(url)
       .then((data) => {
         setCountries(data);
-        // setcopyCountries(data);
       })
       .catch((error) => setError(error));
     setisLoading(false);
